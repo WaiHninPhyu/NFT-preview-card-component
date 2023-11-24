@@ -1,0 +1,147 @@
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root{
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --main-BG: hsl(217, 54%, 11%);
+    --card-BG : hsl(216, 50%, 16%);
+    --very-dark-blue: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+body{
+    background-color: var(--main-BG);
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container{
+    background: var(--card-BG);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 0 auto;
+    max-width: 350px; 
+}
+
+.cube-img{
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.cube-img img{
+    width: 100%;
+    display: block;
+}
+
+.cube-img::after{
+    --cyan: hsl(178, 100%, 50%, 0.3);
+    content: url(./images/icon-view.svg);
+    background: var(--cyan);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.25s ease;
+
+}
+
+.cube-img:hover::after{
+    opacity: 1;
+}
+
+.card-body{
+    padding: 16px 0 0;
+    
+}
+
+.card-header{
+    color: var(--white);
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.card-header:hover{
+    color: var(--cyan);
+}
+
+.card-content{
+    color: var(--soft-blue);
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+.card-body .card-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-price , 
+.card-count{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.card-price img, 
+.card-count img{
+    margin-right: 6px;
+}
+
+.card-price{
+    color: var(--cyan);
+}
+
+.card-count{
+    color: var(--soft-blue);
+}
+
+
+.card-footer{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--very-dark-blue);
+}
+
+.card-footer img{
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(--white);
+    margin-right: 25px;
+    border-radius: 50%;
+}
+
+.card-footer .ava-name{
+    color: var(--soft-blue);
+    font-weight: 100px;
+}
+
+.card-footer a{
+    color: var(--white);
+    font-size: 20;
+    cursor: pointer;
+}
+
+.card-footer a:hover{
+    color: var(--cyan);
+}
